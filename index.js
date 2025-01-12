@@ -33,6 +33,8 @@ app.use((req, res, next) => {
     }
 });
 
+app.use('/uploads/profiles', express.static('uploads/profiles'));
+
 // CORS Middleware
 // app.use(cors({
 //     origin: process.env.ORIGIN || 'http://localhost:5173',
