@@ -4,7 +4,7 @@ export const verifyToken = (request, response, next) => {
   const token = request.cookies.jwt;
 
   if (!token) {
-    response.status(401).send("You are not authenticated");
+    return response.status(401).send("You are not authenticated");
   }
 
   jwt.verify(token, process.env.JWT_KEY, async (error, payload) => {
